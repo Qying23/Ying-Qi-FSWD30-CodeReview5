@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title></title>
+   <link rel="stylesheet" href="">
+  
+   <style>
+
+      html{
+        width: 1280px;
+       }
+      body{
+        background: url(CR5/computer.jpg) no-repeat
+       }
+      header{
+       background-color:#800080;
+       text-align: center;
+       margin: -8px -8px 0px -8px;
+       padding: 20px 50px;
+       height: 10%;
+       }
+
+      .norm{
+        color: white;
+        background-color:#ffb3ff;
+        text-align: center;
+        margin: 0px -8px 0px -8px;
+        padding: 235px;
+        font-size: 30px;
+        opacity: 0.4;
+       }
+
+      .bilder{  
+        width: 1280px;  
+        height: 550px;
+        background-color:#FFFFFF ;
+        margin: 0px 0px 0px -8px;
+        padding: 23px 0px 50px 30px;
+      }
+      
+      .pers {
+        width: 600px;
+        background-color: #d6c0d8;
+        margin: 5px 5px 5px 5px;
+
+       }
+
+       .bild img {
+           width: 150px;
+           margin-left: 20px;
+           margin-top: 20px;
+           margin-right: 20px;
+       }
+
+       .text{
+        padding-top: 20px;
+       }
+
+       button{
+           font-size: 25px;
+           border-radius: 10px;
+           background-color:#87b7ab;
+           margin-left:200px ;
+           margin-top: 145px;
+       }
+      
+      hr{
+        height: 2px;
+        background-color: black
+      }
+
+      footer{
+        text-align: center;
+        padding-top: 30px;
+        height: 60px;
+      }
+
+       </style>
+
+</head>
+<body>
+
+
+       <header>
+           <img src="CR5/logo-coders-dating.png" width="50%">
+       </header>
+       <div class="norm">
+           <h1>Welcome to our website</h1>
+       </div>
+
+        <div class="bilder">
+          <script>
+
+
+           var john = {
+               name: "John",
+               surname:"Doe",
+               age:25,
+               image: "CR5/boy1.jpg",
+               likes: 0,
+               herz: "CR5/like.png"
+           };
+           var jane = {
+               name: "Jane",
+               surname:"Doe",
+               age:25,
+               image: "CR5/girl1.jpg",
+               likes: 0,
+               herz: "CR5/like.png"
+           };
+           var maxina = {
+               name: "Maxina",
+               surname:"Musterman",
+               age:25,
+               image: "CR5/girl2.jpg",
+               likes: 0,
+               herz: "CR5/like.png"
+           };
+           var max = {
+               name: "Max",
+               surname:"Musterman",
+               age:25,
+               image: "CR5/boy2.jpg",
+               likes: 0,
+               herz: "CR5/like.png"
+           };
+           var personen = [
+               john,
+               jane,
+               maxina,
+               max
+           ];
+
+          for (var i=0; i < personen.length; i++) {
+
+           if (i==2){
+               document.write("<div style='clear:both;'></div>");
+           }
+
+           document.write("<div class=\"pers\" style='float: left' >");
+
+           document.write( "<div class=\"bild\" style='float:left;'>");
+           document.write( "<img src='" + personen[i].image  + "' >");
+           document.write("</div>");
+
+           document.write( "<div  class=\"text\">");
+           document.write( " Name: " + "<b>" + personen[i].name + "</b>" + "<br>");
+           document.write( " Surname: " + "<b>" + personen[i].surname + "</b>" + "<br>");
+           document.write( " Age: " + "<b>" + personen[i].age + "</b>" +"<br>");
+
+          //styles vom button ist hier
+           document.write( '<button onclick="like('+ i +')">Like</button><span style=" white-space: nowrap;  font-size: 45px; color: red; width: 150px;margin-left: 5px; margin-right: 5px;" id="like' + i + '">' + personen[i].likes + '</span><img src="' + personen[i].herz +'">');
+
+
+           document.write("</div>");
+           document.write("</div>");
+           }
+
+
+           function like (index){
+              personen[index].likes=personen[index].likes+1;
+
+              document.getElementById('like' + index).innerHTML=personen[index].likes;
+           }
+
+      </script>
+    </div>
+    <hr></hr>
+    <footer>
+      <img src="CR5/logo-coders-dating-footer.png">
+    </footer>
+
+</body>
+</html>
